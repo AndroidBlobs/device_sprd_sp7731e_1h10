@@ -1,0 +1,84 @@
+import /vendor/etc/init/hw/init.common.rc
+
+on post-fs
+    insmod /vendor/lib/modules/lis2dh.ko
+    insmod /vendor/lib/modules/ltr_558als.ko
+
+on post-fs-data
+    mkdir /data/local/slogmodem 0770 shell system
+
+
+    #add for microarray fingerprint
+    chmod 660 /dev/madev0
+    mkdir /data/system/ma_fingerprint 0770 system system
+    chown system system /dev/madev0
+
+    # add for fingerprint app function
+    mkdir /data/sprd 0770 system system
+    mkdir /data/sprd/launchappdata 0770 system system
+    mkdir /data/sprd/applock 0770 system system
+    
+    
+    #modify permission for voicetrigger dev
+    chown system  audio /dev/rt5512
+    chmod 660     /dev/rt5512
+
+
+service enghardwaretest /system/bin/enghardwaretest
+    class main
+    disabled
+    user root
+    oneshot
+
+on boot
+    chmod 666 /dev/ttyS0
+    chown system system /dev/ttyS2
+    chmod 666 /dev/ttyS2
+    chown system camera /dev/sprd_sensor
+    chmod 660 /dev/sprd_sensor
+    chown system camera /dev/sprd_image
+    chmod 660 /dev/sprd_image
+    chown system camera /dev/sprd_jpg
+    chmod 666 /dev/sprd_jpg
+    chown system camera /dev/sprd_cpp
+    chmod 660 /dev/sprd_cpp
+    chown system camera /dev/sprd_scale
+    chmod 660 /dev/sprd_scale
+    chown system camera /dev/sprd_rotation
+    chmod 660 /dev/sprd_rotation
+    chown system camera /dev/sprd_otp
+    chmod 660 /dev/sprd_otp
+#    insmod /lib/modules/bcmdhd.ko
+
+    chmod 0766 /vendor/bin/memsicp
+    chown root /vendor/bin/memsicp
+
+    #memsic
+    mkdir /data/vendor/gsensor 0777 root system
+
+service memsicp  /vendor/bin/memsicp
+     class main
+     user system
+     group system
+     oneshot
+
+
+# block I/O vm.dirty parameters
+    write /proc/sys/vm/dirty_background_bytes 4194304
+    write /proc/sys/vm/dirty_bytes  52428800
+
+#service download /system/bin/download
+#    class core
+#    user system
+#    group system shell wifi bluetooth
+#    oneshot
+
+service gpsd /vendor/bin/gpsd
+    class core
+    user system
+    group gps system shell inet net_raw wifi
+
+service fingerprintd /system/bin/fingerprintd
+    class main
+    user system
+    group system

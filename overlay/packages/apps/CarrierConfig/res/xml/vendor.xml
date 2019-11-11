@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carrier_config_list>
+    <carrier_config>
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_vt_available_bool" value="true" />
+        <boolean name="carrier_volte_tty_supported_bool" value="false" />
+        <boolean name="automatic_call_record_enabled_bool" value="true" />
+        <boolean name="vibrate_for_call_connection_bool" value="true" />
+        <boolean name="screen_off_in_active_call_state_bool" value="true" />
+        <boolean name="show_network_selection_warning_bool" value="true" />
+        <string-array name="carrier_metered_apn_types_strings" num="3">
+            <item value="default" />
+            <item value="dun" />
+            <item value="supl" />
+        </string-array>
+        <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+            <item value="default" />
+            <item value="dun" />
+            <item value="supl" />
+        </string-array>
+        <string name="operator_apn_not_editable">502152,20801,22610</string>
+        <string name="operator_apn_not_show_xcap">60203</string>
+        <boolean name="attach_apn_enable" value="true" />
+        <string name="plmns_esm_flag">00101,26001,23001,23003,21910,50501,50502,502156,27201,20404,21401,23430,23431,23432,23420,23415,23410,23433,23434,23486,22201,23408,46003,23210,23205,23438,23476,23594,27205,41866,50503,20820,26207,23450,23458,23428,23455,23419,23403,44010,44020,44000,310410,310150,310170,310560,311180,310380,310680,310070,310090,405840,405854,405855,405856,405857,405858,405859,405860,405861,405862,405863,405864,405865,405866,405867,405868,405869,405870,405871,405872,405873,405874,732101,71606,42902,51010,51001,51011</string>
+        <string name="plmns_single_pdn" />
+        <boolean name="flip_to_silent_incoming_call_enabled_bool" value="true" />
+        <boolean name="fade_in_enabled_bool" value="true" />
+        <boolean name="double_press_on_headset_key_bool" value="true" />
+        <boolean name="feature_data_and_apn_pop_bool" value="false" />
+        <string name="feature_data_and_apn_pop_operator_string" />
+        <string name="operator_show_ims_apn">20801,22610,52000,52004,502152,60201,73001,71606</string>
+        <string name="operator_show_xcap_apn">23415,46692</string>
+        <string name="ut_priority">00101,001001,234033,23433,23430,234030,51009,510009,46692</string>
+        <string name="ut_fallback_volte">00101,001001,234033,23433,23430,234030,51009,510009</string>
+        <string name="operator_dual_volte_white_list">898600,898602,898607</string>
+        <boolean name="call_barring_visibility_bool" value="true" />
+        <boolean name="support_direct_fdn_dialing_bool" value="true" />
+    </carrier_config>
+    <carrier_config>
+        <string name="config_ims_package_override_string">com.google.android.ims</string>
+    </carrier_config>
+</carrier_config_list>

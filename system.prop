@@ -1,0 +1,67 @@
+#
+# from device/sprd/pike2/sp7731e_1h10/system.prop
+#
+# Default density config
+#ro.sf.lcd_density=320
+#ro.sf.lcd_width=54
+#ro.sf.lcd_height=96
+ro.product.hardware=sc7731e_1h10_v1.1.0
+sys.hardware.version=SC7731e_2_IRD_K_V1.1.0
+# Set Opengl ES Version 3.2
+#ro.opengles.version=196610
+
+ro.fm.chip.port.UART.androidm=false
+
+# set camera flash bettery level
+persist.sys.cam.battery.flash=10
+
+# FRP property for pst device
+ro.frp.pst=/dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/persist
+
+persist.sys.cam.filter.highfps=true
+
+persist.sys.cam.fast.thumb=false
+persist.sys.cam.sr.enable=false
+persist.sys.blending.enable=false
+
+#enable 3dnr feature
+persist.sys.cam.3dnr=true
+
+#open camera location recording function
+persist.sys.cam.gps=true
+
+#enable audio nr tuning
+ro.audio_tunning.nr=1
+
+persist.sys.cam.sfv.alter=true
+
+#Enable sdcardfs feature
+ro.sys.sdcardfs=true
+persist.sys.sdcardfs=force_on
+
+#use sprd define media_profiles
+media.settings.xml = vendor/etc/media_profiles_turnkey.xml
+
+#Disable assistant touch
+ro.product.assistanttouch=false
+
+# Disable the long screenshot
+ro.longscreenshot.enable=false
+
+#sprd_fb lib feature switch  0--part func  1--full func
+persist.sys.cam.beauty.fullfuc=false
+
+#add for performance
+dalvik.vm.foreground-heap-growth-multiplier=2.0
+pm.dexopt.downgrade_after_inactive_days=10
+ro.lmk.critical_upgrade=true
+ro.lmk.upgrade_pressure=40
+ro.lmk.downgrade_pressure=60
+ro.lmk.kill_heaviest_task=false
+ro.lmk.vmpressurenhanced=true
+sys.rotation.animscale=0.5
+
+#enable uififo
+sys.use_fifo_ui=1
+
+#
